@@ -1,24 +1,14 @@
-export class Samurai {
-    // Fields
-    private x : number = 0
-    private y : number = 0
-    private div: HTMLElement
+import { Objects } from "./objects.js"
 
-    public getBoundingRect() : DOMRect {
-        return this.div.getBoundingClientRect()
-    }
+export class Samurai extends Objects{
+
 
     constructor(tagName: string)  {
-        this.create()
+        super(tagName)
         
         // Generate a random x and y value within de width and height of the viewport
         this.x = Math.floor(Math.random() * (window.innerWidth - this.div.clientWidth))
         this.y = Math.floor(Math.random() * (window.innerHeight - this.div.clientHeight))
-    }
-
-    private create() : void {
-        this.div = document.createElement("samurai")
-        document.body.appendChild(this.div)   
     }
 
     public update() : void {
@@ -33,7 +23,7 @@ export class Samurai {
             this.y = Math.floor(Math.random() * (window.innerHeight - this.div.clientHeight))
         }
 
-        this.div.style.transform = `translate(${this.x}px, ${this.y}px)`
+        super.update()
     }
 
     public killSamurai() : void {

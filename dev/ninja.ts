@@ -1,34 +1,22 @@
-export class Ninja{
-    // Fields
-    private x : number = 0
-    private y : number = 0
-    private div: HTMLElement
+import { Objects } from "./objects.js"
+
+export class Ninja extends Objects{
     
     public lives: number = 3
     public money: number = 0
 
     private verticalSpeed : number = 0
 
-    public getBoundingRect() : DOMRect {
-        return this.div.getBoundingClientRect()
-    }
-
     constructor(tagName: string) {
+        super(tagName)
         console.log("Ninja was created!")
 
         // Add the event listeners to the window for the keyboard events
         window.addEventListener("keydown",  (e: KeyboardEvent) => this.onKeyDown(e))
         window.addEventListener("keyup",    (e: KeyboardEvent) => this.onKeyUp(e))
-
-        this.create()
         
         this.x = 100
         this.y = Math.floor(Math.random() * (window.innerHeight - this.div.clientHeight))
-    }
-
-    private create() : void {
-        this.div = document.createElement("ninja")
-        document.body.appendChild(this.div)   
     }
 
     public update() : void {
@@ -36,7 +24,7 @@ export class Ninja{
         this.y += this.verticalSpeed
 
         // Draw the ninja on the right coordinate (x, y)
-        this.div.style.transform = `translate(${this.x}px, ${this.y}px)`
+        super.update()
     }
 
     private onKeyDown(e: KeyboardEvent): void {
