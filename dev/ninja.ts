@@ -3,7 +3,7 @@ import { Objects } from "./objects.js"
 export class Ninja extends Objects{
     
     public lives: number = 3
-    public money: number = 0
+    private money: number = 0
 
     private verticalSpeed : number = 0
 

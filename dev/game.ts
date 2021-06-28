@@ -9,6 +9,7 @@ class Game {
     private moneybag : Money[] = []
 
     private counter:number = 0
+    
 
     constructor() {
         console.log("Game was created!")
