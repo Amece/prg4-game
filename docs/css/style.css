@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow:hidden;
+    margin:0px; 
+    padding:0px;
+}
+
+samurai, moneybag, background, ninja {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+samurai {
+    background-image: url(../images/samurai.png);
+    width:224px; height: 221px;
+}
+
+ninja {
+    background-image: url(../images/ninja.png);
+    width:194px; height: 256px;
+    
+}
+
+moneybag {
+    background-image: url(../images/moneybag.png);
+    width:200px; height: 243px;
+}
+
+background {
+	background-image: url(../images/background.jpg);
+    width:100%; height: 100%;
+    background-size: cover;
+}
+
+#lives {
+    float: left;
+    font-size: 50px;
+    color: black;
+    margin-left: 1.5%;
+    margin-top: 1%;
+}
+
+#money {
+    float: right;
+    font-size: 50px;
+    color: gold;
+    margin-right: 1.5%;
+    margin-top: 1%;
+}
+
+#gameover {
+    text-align: center;
+    font-size: 100px;
+    opacity: 0;
+    transition: .5s ease-in-out all;
+}
+
+.show{
+    opacity: 1 !important;
+}
+
+
